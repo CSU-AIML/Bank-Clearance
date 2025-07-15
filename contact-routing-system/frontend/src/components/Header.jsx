@@ -447,50 +447,7 @@ const Header = ({ notificationService }) => {
             </ul>
           </nav>
 
-          {/* Enhanced Right Section */}
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Search Bar */}
-            <SearchBar isScrolled={isScrolled} />
-            
-            {/* Notifications */}
-            <div className="hidden sm:block">
-              {notificationService ? (
-                <NotificationBell 
-                  notificationService={notificationService} 
-                  isScrolled={isScrolled} 
-                />
-              ) : (
-                <div className={`p-2 md:p-2.5 rounded-2xl animate-pulse ${
-                  isScrolled 
-                    ? 'bg-slate-100' 
-                    : 'bg-white/20 backdrop-blur-md'
-                }`}>
-                  <Bell size={16} className={isScrolled ? 'text-slate-400' : 'text-white/50'} />
-                </div>
-              )}
-            </div>
-            
-            {/* User Avatar */}
-            <div className="hidden sm:block">
-              <UserAvatar isScrolled={isScrolled} />
-            </div>
-
-            {/* Enhanced Mobile Menu Button */}
-            <button
-              className={`md:hidden p-2.5 md:p-3 rounded-xl md:rounded-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                isScrolled 
-                  ? 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:shadow-md' 
-                  : 'bg-white/20 backdrop-blur-md hover:bg-white/30 text-white'
-              }`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
-            >
-              <div className={`transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-180' : 'rotate-0'}`}>
-                {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
-              </div>
-            </button>
-          </div>
+          
         </div>
       </header>
 

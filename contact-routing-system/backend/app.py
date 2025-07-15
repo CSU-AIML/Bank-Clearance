@@ -15,7 +15,8 @@ CORS(app,
      origins=[
          'https://bankclearancee.onrender.com',  # Your frontend URL
          'http://localhost:3000', 
-         'http://localhost:5173'
+         'http://localhost:5173',
+         'http://localhost:5000',  # For local development
      ],
      supports_credentials=False)  # Changed to False to avoid credentials issues
 
@@ -696,6 +697,7 @@ def get_sebi_states():
             'success': False,
             'error': str(e)
         }), 500
+
 
 # ============================================================================
 # STATIC FILE SERVING (for React app)
